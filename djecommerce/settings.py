@@ -165,7 +165,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # URL FORMATTING (www.example.com)
 # This redirects URLs lacking 'www' prefix to the same URL with a leading 'www'
-PREPEND_WWW = True
+PREPEND_WWW = False
 
 # This adds a slash '/' at the end of URLs without it
 APPEND_SLASH = True
