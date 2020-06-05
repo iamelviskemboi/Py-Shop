@@ -5,7 +5,11 @@ import sys
 
 
 def main():
+<<<<<<< HEAD
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djecommerce.settings')
+=======
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pyshop.settings')
+>>>>>>> 87b63e42500ccf882150698abaa3b3cacd3d2d3c
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
