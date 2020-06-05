@@ -1,0 +1,11 @@
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+}
+
+.brd{
+  border: .15rem #4d8e3d solid !important;
+  border-radius: 1rem !important;
+}

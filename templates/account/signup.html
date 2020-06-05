@@ -1,0 +1,70 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block styles %}
+<!-- login-form styles -->
+<link rel="stylesheet" href="{% static 'master/css/accounts/signin.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<body class="bg-whitesmoke">
+  <!--Main layout-->
+  <main>
+    <div class="container">
+      {% if not messages %}
+      <div class="mt-5 pt-4">
+        {% endif %}
+        <!--Section: Sign In v.3-->
+        <section class="text-center mb-4 spc-down">
+          <!--Grid row-->
+          <div class="row wow fadeIn">
+            <div class="col-12">
+              <div class="form-signin brd spc2-up">
+                <h1 class="spc2-down">{% trans "Sign Up" %}</h1>
+                <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                  {% csrf_token %}
+                  <div class="form-group spc2-down">
+                    <input class="form-control" type="text" name="username" placeholder="Username" autofocus="autofocus"
+                      minlength="1" maxlength="150" required id="id_username">
+                  </div>
+                  <div class="form-group spc2-down">
+                    <input class="form-control" type="email" name="email" placeholder="E-mail address (optional)"
+                      id="id_email">
+                  </div>
+                  <div class="form-group spc2-down">
+                    <input class="form-control" type="password" name="password1" placeholder="Password" required
+                      id="id_password1">
+                  </div>
+                  <div class="form-group spc2-down">
+                    <input class="form-control" type="password" name="password2" placeholder="Password (again)" required
+                      id="id_password2">
+                  </div>
+                  {% if redirect_field_value %}
+                  <div class="form-group spc2-down">
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                  </div>
+                  {% endif %}
+                  <button class="btn btn-outline btn-block bg-success text-white" type="submit">{% trans "Sign Up" %}
+                    &raquo;</button>
+                  <div class="row text-center spc2-up">
+                    <div class="col-12">
+                      <a class="spc-up" href="{% url 'account_login' %}">{% trans "Already have an account?" %}</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!--Grid row-->
+        </section>
+        <!--Section: Sign In v.3-->
+      </div>
+    </div>
+  </main>
+  <!-- Main Layout -->
+</body>
+{% endblock %}

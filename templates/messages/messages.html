@@ -1,0 +1,14 @@
+<div class="container mt-5 pt-4">
+  <div class="text-center msg">
+    {% for message in messages %}
+    <div class="alert alat-{{ message.tags }} alert-{{ message.tags }} alert-dismissable fade show" role="alert">
+      <span class="text-3 font font-weight-normal">{{ message }}</span>
+      <button class="close" type="button" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">
+          <i class="fa fa-times"></i>
+        </span>
+      </button>
+    </div>
+    {% endfor %}
+  </div>
+</div>
