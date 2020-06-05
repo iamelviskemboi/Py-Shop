@@ -24,6 +24,7 @@
           <!--Content-->
           <div class="p-4">
             <div class="mb-3">
+              <h1 class="font-weight-light">{{ object.title }}</h1>
               <a href="">
                 <span class="badge text-light bg-{{ object.get_label_display }} mr-1">
                   {{ object.get_category_display }}
@@ -60,12 +61,12 @@
                 Add to cart
                 <i class="fas fa-shopping-cart ml-1"></i>
               </a>
-
+<!-- 
               <a class="btn btn-danger btn-md my-0 p" href="{{ object.get_remove_from_cart_url }}">
                 Remove from cart
                 <i class="fas fa-times ml-1"></i>
               </a>
-
+ -->
             </form>
 
           </div>
