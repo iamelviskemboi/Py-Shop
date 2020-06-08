@@ -13,7 +13,7 @@
 
 {% block content %}
 
-<body class="bg-whitesmoke">
+<body class="bg-white">
   <!--Main layout-->
   <main>
     <div class="container">
@@ -63,23 +63,23 @@
                     <input class="form-control" type="password" name="password" placeholder="Password" required
                       id="id_password">
                   </div>
-                  <div class="form-group spc2-down float-left">
-                    <label for="id_remember" class="font-weight-normal">Remember Me</label>
+                  <div class="form-group spc2-up float-left">
+                    <label for="id_remember" class="font-weight-light rem">Remember Me</label>
                     <input type="checkbox" name="remember" id="id_remember">
                   </div>
                   {% if redirect_field_value %}
                   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                   {% endif %}
-                  <button class="btn btn-block text-1-5 btn-outline-green bg-green clr-dark" type="submit">
+                  <button class="btn btn-block btn-green clr-light font-weight-normal" type="submit">
                     {% trans 'Login' %}&nbsp;<i class="fa fa-sign-in-alt"></i></button>
                 </form>
                 <hr>
                 <div class="row spc2-up spc2-down">
                   <div class="col-6">
-                    <a class="link" href="{% url 'account_reset_password' %}">{% trans "Forgot password?" %}</a>
+                    <a class="link float-left" href="{% url 'account_reset_password' %}">{% trans "Forgot password?" %}</a>
                   </div>
                   <div class="col-6">
-                    <a class="link" href="{% url 'account_signup' %}">{% trans "Create an account" %}</a>
+                    <a class="link float-right" href="{% url 'account_signup' %}">{% trans "Create an account" %}</a>
                   </div>
                 </div>
               </div>

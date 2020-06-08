@@ -6,6 +6,6 @@
 }
 
 .brd{
-  border: .15rem #4d8e3d solid !important;
+  background-color: white !important;
   border-radius: 1rem !important;
 }

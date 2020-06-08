@@ -10,11 +10,11 @@ html {
 
 /* FONT FAMILY */
 .font-neue {
-  font-family: 'comic neue' !important;
+  font-family: "comic neue" !important;
 }
 
 .font-mono {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif !important;
 }
 
 /* FONT SIZE */
@@ -49,13 +49,27 @@ html {
   color: #05840b !important;
 }
 
-.bg-whitesmoke {
-  background-color: #f8f9fa !important;
+.clr-red {
+  color: firebrick !important;
 }
 
 /* BG-COLORS */
 .bg-orange {
   background-color: #d4961a !important;
+}
+
+.bg-green {
+  background-color: #05840b !important;
+}
+
+.bg-white {
+  background-color: #ffffff47 !important;
+}
+.bg-lighter {
+  background-color: #f9f9fa !important;
+}
+.bg-whitesmoke {
+  background-color: #f8f9fa !important;
 }
 
 /* ALERTS */
@@ -124,7 +138,7 @@ html {
   z-index: 1030;
 }
 
-@media (min-height: 1024px) {
+@media screen and (min-height: 908px) and (min-width: 768px) {
   .footr {
     position: fixed;
     right: 0;
@@ -141,7 +155,22 @@ html {
 }
 
 /* ICON */
-.icon{
+.icon {
   max-height: 5rem !important;
   max-width: 5rem !important;
+}
+
+/* TEXT */
+.super {
+  font-size: 0.46rem !important;
+}
+
+/* BUTTON */
+.btn-outline-green:hover {
+  background-color: #05840b !important;
+  color: #f8f9fa !important;
+}
+/* REMEMBER ME */
+.rem {
+  font-weight: 300 !important;
 }

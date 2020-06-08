@@ -11,7 +11,7 @@
 
 {% block content %}
 
-<body class="bg-whitesmoke">
+<body class="bg-white">
   <!--Main layout-->
   <main>
     <div class="container">
@@ -21,7 +21,7 @@
         <!--Section: Sign In v.3-->
         <section class="text-center mb-4 spc-down">
           <!--Grid row-->
-          <div class="row wow fadeIn">
+          <div class="row wow fadeIn spc-down spc2-up">
             <div class="col-12">
               <div class="form-signin brd spc2-up">
                 <h1 class="spc2-down">{% trans "Sign Up" %}</h1>
@@ -48,11 +48,12 @@
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                   </div>
                   {% endif %}
-                  <button class="btn btn-outline btn-block bg-success text-white" type="submit">{% trans "Sign Up" %}
-                    &raquo;</button>
+                  <button class="btn btn-outline-green btn-block bg-success text-white font-weight-normal" type="submit">
+                    {% trans "Sign Up" %} <span class="font-weight-bold" style="font-size: 19px !important;">&raquo;</span>
+                  </button>
                   <div class="row text-center spc2-up">
                     <div class="col-12">
-                      <a class="spc-up" href="{% url 'account_login' %}">{% trans "Already have an account?" %}</a>
+                      <a class="spc-up link" href="{% url 'account_login' %}">{% trans "Already have an account?" %}</a>
                     </div>
                   </div>
                 </form>

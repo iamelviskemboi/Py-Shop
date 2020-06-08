@@ -57,7 +57,7 @@
       <ul class="navbar-nav nav-flex-icons">
         {% if request.user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link waves-effect">
+          <a class="nav-link waves-effect" href="{% url 'core:checkout' %}">
             <span class="badge red z-depth-1 mr-1"></span>
             <i class="clr-green fas fa-shopping-cart"></i>
             <span class="clearfix d-none d-sm-inline-block"> Cart </span>
@@ -66,8 +66,8 @@
         <li class="nav-item">
           <a class="nav-link waves-effect" href="{% url 'account_logout' %}">
             <span class="badge red z-depth-1 mr-1"></span>
-            <i class="clr-green fas fa-sign-out-alt fa-1x"></i>
-            <span class="clearfix d-none d-sm-inline-block"> Logout </span>
+            <i class="clr-green fas fa-power-off fa-1x"></i>
+            <span class="clearfix d-none d-sm-inline-block"> </span>
           </a>
         </li>
         {% else %}
@@ -81,7 +81,7 @@
         <li class="nav-item">
           <a class="nav-link waves-effect" href="{% url 'account_signup' %}">
             <span class="badge red z-depth-1 mr-1"></span>
-            <i class="clr-green fas fa-user fa-1x"></i>
+            <i class="clr-green fas fa-user-plus fa-1x"></i>
             <span class="clearfix d-none d-sm-inline-block">Signup</span>
           </a>
         </li>
@@ -109,43 +109,41 @@
 <!-- Main Content -->
 
 <!--Footer-->
-<footer class="page-footer text-center font-small mt-4 wow fadeIn footr">
-  <hr class="my-4">
-  <!-- Social icons -->
-  <div class="pb-4 pt-3">
-    <a href="{% url 'core:home' %}">
-      <i class="fab fa-facebook-f mr-3 icon"></i>
-    </a>
+<div class="spc-up">
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn footr">
+    <hr class="my-4">
+    <!-- Social icons -->
+    <div class="pb-4 pt-3">
+      <a href="{% url 'core:home' %}">
+        <i class="fab fa-facebook-f ml-3 mr-3 icon"></i>
+      </a>
 
-    <a href="{% url 'core:home' %}">
-      <i class="fab fa-twitter mr-3 icon"></i>
-    </a>
+      <a href="{% url 'core:home' %}">
+        <i class="fab fa-twitter mr-3 icon"></i>
+      </a>
 
-    <a href="{% url 'core:home' %}">
-      <i class="fab fa-youtube mr-3 icon"></i>
-    </a>
+      <a href="{% url 'core:home' %}">
+        <i class="fab fa-youtube mr-3 icon"></i>
+      </a>
 
-    <a href="{% url 'core:home' %}">
-      <i class="fab fa-pinterest mr-3 icon"></i>
-    </a>
+      <a href="{% url 'core:home' %}">
+        <i class="fab fa-github mr-3 icon"></i>
+      </a>
 
-    <a href="{% url 'core:home' %}">
-      <i class="fab fa-github mr-3 icon"></i>
-    </a>
+      <a href="{% url 'core:home' %}">
+        <i class="fab fa-codepen mr-3 icon"></i>
+      </a>
+    </div>
+    <!-- Social icons -->
 
-    <a href="{% url 'core:home' %}">
-      <i class="fab fa-codepen mr-3 icon"></i>
-    </a>
-  </div>
-  <!-- Social icons -->
+    <!--Copyright-->
+    <div class="footer-copyright py-3 pt-3">
+      <i class="fas fa-copyright"></i> 2020 Copyright<a href="{% url 'core:home' %}"> PyShop </a>
+    </div>
+    <!--/.Copyright-->
 
-  <!--Copyright-->
-  <div class="footer-copyright py-3 pt-3">
-    <i class="fas fa-copyright"></i> 2020 Copyright<a href="{% url 'core:home' %}"> PyShop </a>
-  </div>
-  <!--/.Copyright-->
-
-</footer>
+  </footer>
+</div>
 <!--/.Footer-->
 <!-- mdb scripts -->
 <script src="{% static 'mdb/js/jquery-3.4.1.min.js' %}"></script>
