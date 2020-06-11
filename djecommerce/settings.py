@@ -71,11 +71,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djecommerce.wsgi.application'
-
+""" 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
-
+ """
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -149,16 +149,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-""" STATICFILES_DIRS = [
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles'),
     ]
- """
+
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files (Photos, Videos, Documents)
 
@@ -182,8 +182,8 @@ EMAIL_HOST_USER = "iamelviskemboi@gmail.com"
 EMAIL_HOST_PASSWORD = "imgonnaberich!"
 
 # Heroku: Update database configuration from $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
 # Activate Django-Heroku
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

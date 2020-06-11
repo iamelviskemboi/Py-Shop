@@ -36,9 +36,9 @@
   <!--Main layout-->
   <main>
     <div class="container">
-    {% if not messages %}
+      {% if not messages %}
       <div class="mt-5 pt-4">
-    {% endif %}
+        {% endif %}
         <!--Navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
 
@@ -76,7 +76,8 @@
 
             <form class="form-inline">
               <div class="md-form my-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="@{{ request.user.username }}" aria-label="Search">
+                <input class="form-control mr-sm-2" type="text" placeholder="@{{ request.user.username }}"
+                  aria-label="Search">
               </div>
             </form>
           </div>
@@ -89,7 +90,7 @@
         <section class="text-center mb-4">
           <!--Grid row-->
           <div class="row wow fadeIn">
-            {% for product in object_list %}
+            {% for product in page_obj %}
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4">
 
@@ -142,44 +143,44 @@
         </section>
         <!--Section: Products v.3-->
 
+        <hr>
+
         <!--Pagination-->
+        {% if is_paginated %}
         <nav class="d-flex justify-content-center wow fadeIn">
           <ul class="pagination pg-green">
-
-            <!--Arrow left-->
-            <li class="page-item disabled">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+              <!-- <a class="page-link" href="?page=1">&laquo;</a> -->
+              <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true" style="color: #205823 !important;">&laquo;</span>
                 <span class="sr-only">Previous</span>
               </a>
             </li>
+            {% endif %}
 
             <li class="page-item active">
-              <a class="page-link" href="#">1
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">4</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">5</a>
+              <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>
+              <span class="sr-only">(current)</span>
             </li>
 
+            {% if page_obj.has_next %}
             <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
+              <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true" style="color: #205823 !important;">&raquo;</span>
                 <span class="sr-only">Next</span>
               </a>
+              <!-- <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a> -->
             </li>
+            {% endif %}
           </ul>
         </nav>
+        <div class="float-right">
+          <code class="current pagy">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+          </code>
+        </div>
+        {% endif %}
         <!--Pagination-->
 
       </div>
